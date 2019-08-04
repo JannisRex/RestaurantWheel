@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react'
+import * as Font from 'expo-font'
 import { AppLoading } from 'expo'
 import MainTabNavigator from './src/navigation/navigator/MainTabNavigator'
 
@@ -19,7 +20,13 @@ export default class App extends Component<Props, State> {
   }
 
  _loadResourcesAsync = async () => {
-   await console.log('fetching API...')
+   await Promise.all([
+     Font.loadAsync({
+       impact: require('./src/assets/font/impact.ttf'),
+       lato_lightitalic: require('./src/assets/font/Lato-LightItalic.ttf'),
+       lato_hairline: require('./src/assets/font/Lato-Hairline.ttf')
+     })
+   ])
  }
 
  _handleLoadingError = error => {

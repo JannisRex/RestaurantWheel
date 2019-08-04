@@ -56,20 +56,20 @@ module.system.haste.paths.blacklist=<PROJECT_ROOT>/Libraries/Animated/src/polyfi
 
 munge_underscores=true
 
-module.name_mapper='^expo$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
-module.name_mapper='^expo-font$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
-module.name_mapper='^expo-asset$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
-module.name_mapper='^@expo/vector-icons$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
-module.name_mapper='^expo-processing$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
-module.name_mapper='^react-native$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
-module.name_mapper='^react-native-elements$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
-# module.name_mapper='^react-navigation$' -> '<PROJECT_ROOT>/type-def-lib/npm/react-navigation_v3.x.x'
-module.name_mapper='^react-navigation$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
-module.name_mapper='^react-navigation-drawer$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
-module.name_mapper='^react-native-snap-carousel$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
-module.name_mapper='^react-native-calendars$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
-module.name_mapper='^react-native-swiper$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
-module.name_mapper='^@react-native-community/async-storage$' -> '<PROJECT_ROOT>/type-def-lib/fixTypes'
+module.name_mapper='^expo$' -> '<PROJECT_ROOT>/flow/fixTypes'
+module.name_mapper='^expo-font$' -> '<PROJECT_ROOT>/flow/fixTypes'
+module.name_mapper='^expo-asset$' -> '<PROJECT_ROOT>/flow/fixTypes'
+module.name_mapper='^@expo/vector-icons$' -> '<PROJECT_ROOT>/flow/fixTypes'
+module.name_mapper='^expo-processing$' -> '<PROJECT_ROOT>/flow/fixTypes'
+module.name_mapper='^react-native$' -> '<PROJECT_ROOT>/flow/fixTypes'
+module.name_mapper='^react-native-elements$' -> '<PROJECT_ROOT>/flow/fixTypes'
+# module.name_mapper='^react-navigation$' -> '<PROJECT_ROOT>/flow/npm/react-navigation_v3.x.x'
+module.name_mapper='^react-navigation$' -> '<PROJECT_ROOT>/flow/fixTypes'
+module.name_mapper='^react-navigation-drawer$' -> '<PROJECT_ROOT>/flow/fixTypes'
+module.name_mapper='^react-native-snap-carousel$' -> '<PROJECT_ROOT>/flow/fixTypes'
+module.name_mapper='^react-native-calendars$' -> '<PROJECT_ROOT>/flow/fixTypes'
+module.name_mapper='^react-native-swiper$' -> '<PROJECT_ROOT>/flow/fixTypes'
+module.name_mapper='^@react-native-community/async-storage$' -> '<PROJECT_ROOT>/flow/fixTypes'
 
 suppress_type=$FlowIssue
 suppress_type=$FlowFixMe

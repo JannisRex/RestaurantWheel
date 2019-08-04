@@ -1,4 +1,5 @@
 // @flow
+import type { pickedRestaurant } from '../../../flow/index'
 import React, { Component } from 'react'
 import { Button, View, Text } from 'react-native'
 import { cologneRestaurants } from '../../assets/data/cologneRestaurants'
@@ -9,7 +10,7 @@ type Props = {}
 type State = {
   isLoading: boolean,
   restaurantPicked: boolean,
-  pickedRestaurant: {} | null
+  pickedRestaurant: pickedRestaurant | null
 }
 
 class getRestaurant extends Component<Props, State> {
@@ -19,7 +20,7 @@ class getRestaurant extends Component<Props, State> {
     this.state = {
       isLoading: true,
       restaurantPicked: false,
-      pickedRestaurant: {}
+      pickedRestaurant: null
     }
   }
 
