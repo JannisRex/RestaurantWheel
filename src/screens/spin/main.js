@@ -1,20 +1,22 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { View } from 'react-native'
+import { getRestaurant, Settings } from '../../components/index'
+import Swiper from 'react-native-swiper'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignContent: 'center',
-    alignItems: 'center'
-  }
-})
 
 class SpinScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text> abc </Text>
+      <View style={{ flex: 1 }} >
+        <Swiper
+
+        />
+        <View>
+          <getRestaurant />
+        </View>
+        <View>
+          <Settings />
+        </View>
       </View>
     )
   }
