@@ -1,11 +1,84 @@
 // https://places.factual.com
 export const cologneRestaurants = {
   'Restaurant A': {
+    name: 'Name',
     sector: '(Volle Bedienung) | (beschränktes Angebot - Imbiss) | (Bars) ...', // maybe category
     food: 'Italian | Steak | American ... ',
     times : {monday: [{12:00}, {18:00}], tuesday: []}  // opens at 12, closes at 18
     address: 'Street',
-    phone: {0221 26130},
+    phone: '022126130',
     website: 'https://www.frueh.de/'
+  },
+  'PizzaA': {
+    name: 'Gürzenich',
+    sector: 'restaurant',
+    food: 'pizza',
+    times: { tuesday: ['8:30', '17:30'], friday: ['8:30', '17:30'], thursday: ['8:30', '17:30'], wednesday: ['8:30', '17:30'], monday: ['8:30', '17:30'] },
+    adress: 'Martinstraße 29-37',
+    phone: '02212848911',
+    website: 'http://www.koelnkongress.de'
+  },
+  'PizzaB': {
+    name: 'Borsalino',
+    sector: 'imbiss',
+    food: 'pizza',
+    times: { sunday: ['8:00', '23:59'], saturday: ['8:00', '23:59'], tuesday: ['8:00', '23:59'], friday: ['8:00', '23:59'], thursday: ['8:00', '23:59'], wednesday: ['8:00', '23:59'], monday: ['8:00', '23:59'] },
+    adress: 'Zülpicher Straße 7',
+    phone: '0221248852',
+    website: 'http://www.restaurant-borsalino.de'
+  },
+  'ItalianA': {
+    name: 'Vapiano',
+    sector: 'restaurant',
+    food: 'italian',
+    times: {"sunday":["11:00","12:00"],"saturday":["11:00","12:00"],"tuesday":["11:00","12:00"],"friday":["11:00","12:00"],"thursday":["11:00","12:00"],"wednesday":["11:00","12:00"],"monday":["11:00","12:00"]},
+    address: 'Habsburgerring 2-12',
+    phone: '022120196151',
+    website: 'https://de.vapiano.com/de/nc/restaurants/vapiano-koeln-2-habsburger-ring-2-12-1/'
+  },
+  'ItalianB': {
+    name: 'Purino Feilenhof',
+    sector: 'restaurant',
+    food: 'italian',
+    times: {"sunday":["11:30","23:00"],"saturday":["11:30","23:00"],"tuesday":["17:00","23:00"],"friday":["17:00","23:00"],"thursday":["17:00","23:00"],"wednesday":["17:00","23:00"],"monday":["17:00","23:00"]},
+    address: 'Steinstraße 58',
+    phone: '022039584884',
+    website: 'http://www.purino.de/restaurants/koeln-porz.html'
+  },
+  'FastFoodA': {
+    name: 'Die fette Kuh',
+    sector: 'imbiss',
+    food: 'fastfood',
+    times: {"sunday":["12:00","23:00"],"saturday":["12:00","23:00"],"tuesday":["12:00","23:00"],"friday":["12:00","23:00"],"thursday":["12:00","23:00"],"wednesday":["12:00","23:00"],"monday":["12:00","23:00"]},
+    address: 'Bonner Straße 43',
+    phone: '022137627775',
+    website: 'http://www.diefettekuh.de'
+  },
+  'FastFoodB': {
+    name: 'Blue Lounge',
+    sector: 'lieferservice',
+    food: 'fastfood',
+    times: {"saturday":["21:00","17:00"],"tuesday":["21:00","17:00"],"friday":["21:00","17:00"],"thursday":["21:00","17:00"],"wednesday":["21:00","17:00"],"monday":["21:30","17:00"]},
+    address: 'Mathiasstraße 4-6',
+    phone: '02212717117',
+    website: 'http://www.blue-lounge.com'
+  },
+  'InternationalA': {
+    name: 'Blue Shell',
+    sector: 'bar',
+    food: 'international',
+    times: {"sunday":["21:00","17:00"],"saturday":["21:00","17:00"],"tuesday":["21:00","17:00"],"friday":["21:00","17:00"],"thursday":["21:00","17:00"],"wednesday":["21:00","17:00"],"monday":["21:00","17:00"]},
+    address: 'Luxemburger Straße 32',
+    phone: '0221231248',
+    website: 'http://www.blue-shell.de'
+  },
+  'InternationalB': {
+    name: 'Peking',
+    sector: 'lieferservice',
+    food: 'international',
+    times: {"sunday":["11:30","23:00"],"saturday":["11:30","23:00"],"tuesday":["11:30","23:00"],"friday":["11:30","23:00"],"thursday":["11:30","23:00"],"wednesday":["11:30","23:00"],"monday":["11:30","23:00"]},
+    address: 'Schanzenstraße 37',
+    phone: '0221137644',
+    website: ''
   }
 }
