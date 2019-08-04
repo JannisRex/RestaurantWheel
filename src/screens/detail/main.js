@@ -17,7 +17,7 @@ type Props = {
 class DetailScreen extends Component<Props> {
   static navigationOptions = ({ navigation }: {navigation: NavigationScreenProp<any>}) => {
     return {
-      title: navigation.state.params.itemTitle,
+      title: (navigation.state.params.itemTitle).slice(1, -1),
       headerStyle: {
         backgroundColor: theme.COLOR_HEADER
       },
