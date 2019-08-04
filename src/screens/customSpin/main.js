@@ -6,7 +6,7 @@ class CustomSpinScreen extends Component {
   render() {
     return (
       <Container>
-        <Text>123</Text>
+        <Text color='#fff'>123</Text>
       </Container>
     )
   }
