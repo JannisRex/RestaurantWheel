@@ -9,7 +9,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? '#2f95dc' : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#000'}
         />
       )
     } else if (this.props.class === 'EvilIcons') {
@@ -18,7 +18,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? '#2f95dc' : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#000'}
         />
       )
     } else if (this.props.class === 'Feather') {
@@ -27,7 +27,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? '#2f95dc' : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#000'}
         />
       )
     } else if (this.props.class === 'MaterialCommunityIcons') {
@@ -36,7 +36,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? '#2f95dc' : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#000'}
         />
       )
     } else if (this.props.class === 'Entypo') {
@@ -45,7 +45,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? '#2f95dc' : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#000'}
         />
       )
     } else if (this.props.class === 'FontAwesome') {
@@ -54,7 +54,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? '#2f95dc' : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#000'}
         />
       )
     } else if (this.props.class === 'Foundation') {
@@ -63,7 +63,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? '#2f95dc' : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#000'}
         />
       )
     }
@@ -72,7 +72,7 @@ export default class TabBarIcon extends React.Component {
         name={this.props.name}
         size={26}
         style={{ marginBottom: -3 }}
-        color={this.props.focused ? '#2f95dc' : '#ccc'}
+        color={this.props.focused ? '#2f95dc' : '#000'}
       />
     )
   }
