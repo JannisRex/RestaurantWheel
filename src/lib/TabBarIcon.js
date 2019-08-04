@@ -1,6 +1,5 @@
 import React from 'react'
 import { Ionicons, MaterialIcons, MaterialCommunityIcons, EvilIcons, Feather, Entypo, FontAwesome, Foundation } from '@expo/vector-icons'
-import theme from '../config/theme.style'
 
 export default class TabBarIcon extends React.Component {
   render() {
@@ -10,7 +9,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? theme.COLOR_TINT : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#ccc'}
         />
       )
     } else if (this.props.class === 'EvilIcons') {
@@ -19,7 +18,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? theme.COLOR_TINT : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#ccc'}
         />
       )
     } else if (this.props.class === 'Feather') {
@@ -28,7 +27,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? theme.COLOR_TINT : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#ccc'}
         />
       )
     } else if (this.props.class === 'MaterialCommunityIcons') {
@@ -37,7 +36,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? theme.COLOR_TINT : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#ccc'}
         />
       )
     } else if (this.props.class === 'Entypo') {
@@ -46,7 +45,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? theme.COLOR_TINT : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#ccc'}
         />
       )
     } else if (this.props.class === 'FontAwesome') {
@@ -55,7 +54,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? theme.COLOR_TINT : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#ccc'}
         />
       )
     } else if (this.props.class === 'Foundation') {
@@ -64,7 +63,7 @@ export default class TabBarIcon extends React.Component {
           name={this.props.name}
           size={26}
           style={{ marginBottom: -3 }}
-          color={this.props.focused ? theme.COLOR_TINT : '#ccc'}
+          color={this.props.focused ? '#2f95dc' : '#ccc'}
         />
       )
     }
@@ -73,7 +72,7 @@ export default class TabBarIcon extends React.Component {
         name={this.props.name}
         size={26}
         style={{ marginBottom: -3 }}
-        color={this.props.focused ? theme.COLOR_TINT : '#ccc'}
+        color={this.props.focused ? '#2f95dc' : '#ccc'}
       />
     )
   }
