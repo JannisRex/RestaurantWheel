@@ -1,19 +1,46 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+// @flow
+import React, { Component } from 'react'
+import { AppLoading } from 'expo'
+import MainTabNavigator from './src/navigation/navigator/MainTabNavigator'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+type Props = {}
+
+type State = {
+  isLoading: boolean
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default class App extends Component<Props, State> {
+  constructor() {
+    super()
+
+    this.state = {
+      isLoading: true
+    }
+  }
+
+ _loadResourcesAsync = async () => {
+   await console.log('fetching API...')
+ }
+
+ _handleLoadingError = error => {
+   console.log(error)
+ }
+
+ _handleFinishLoading = () => {
+   this.setState({ isLoadingComplete: true })
+ }
+
+ render() {
+   const { isLoading } = this.state
+
+   return (isLoading ?
+     <AppLoading
+       startAsync={this._loadResourcesAsync}
+       onError={this._handleLoadingError}
+       onFinish={this._handleFinishLoading}
+     /> : <MainTabNavigator />
+   )
+ }
+}
+
+
