@@ -1,6 +1,6 @@
 import React from 'react'
 import { Platform } from 'react-native'
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
+import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 import TabBarIcon from '../../lib/TabBarIcon'
 
 import SpinScreen from '../../screens/spin/main'
@@ -40,7 +40,7 @@ StackB.navigationOptions = {
   )
 }
 
-export default createBottomTabNavigator({
+export default createAppContainer(createBottomTabNavigator({
   SpinScreen,
   CustomSpinScreen
-})
+}))

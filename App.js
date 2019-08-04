@@ -27,7 +27,7 @@ export default class App extends Component<Props, State> {
  }
 
  _handleFinishLoading = () => {
-   this.setState({ isLoadingComplete: true })
+   this.setState({ isLoading: false })
  }
 
  render() {
