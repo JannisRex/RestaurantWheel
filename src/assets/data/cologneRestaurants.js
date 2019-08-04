@@ -23,7 +23,7 @@ export const cologneRestaurants = [
     sector: 'imbiss',
     food: 'pizza',
     times: { sunday: ['8:00', '23:59'], saturday: ['8:00', '23:59'], tuesday: ['8:00', '23:59'], friday: ['8:00', '23:59'], thursday: ['8:00', '23:59'], wednesday: ['8:00', '23:59'], monday: ['8:00', '23:59'] },
-    adress: 'Zülpicher Straße 7',
+    adress: 'Zuelpicher Straße 7',
     phone: '0221248852',
     website: 'http://www.restaurant-borsalino.de'
   },
