@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Dimensions, View, Text } from 'react-native'
 import { Slider, ButtonGroup, CheckBox } from 'react-native-elements'
+import theme from '../../config/theme.style'
 import styles from './styles'
 
 const selectableButtons = ['Option A', 'Option B', 'Option C']
@@ -21,8 +22,12 @@ class Settings extends Component {
 
   render() {
     return (
-      <View styles={{ flex: 1 }}>
-        <View styles={styles.container}><Text styles={{ textAlign: 'center' }}>Filter Restauraunts etc.</Text></View>
+      <>
+        <View styles={{ flex: 1, textAlign: 'center' }}>
+          <Text>Filter Restauraunts etc.</Text>
+        </View>
+
+      <View styles={{ flex: 1, backgroundColor: theme.COLOR_BACKGROUND }}>
 
         {/* Rendering Slider */}
         <View styles={[styles.container, { alignItems: 'stretch' }]}>
@@ -30,7 +35,6 @@ class Settings extends Component {
             onValueChange={sliderValue => this.setState({ sliderValue })} />
           <Text style={{ textAlign: 'center' }}>{Number(this.state.sliderValue).toFixed(2)}</Text>
         </View>
-
 
         {/* Rendering ButtonGroup */}
         <View styles={styles.container}>
@@ -63,6 +67,7 @@ class Settings extends Component {
           </>
         </View>
       </View>
+      </>
     )
   }
 }

@@ -3,6 +3,8 @@ import type { pickedRestaurant } from '../../../flow/index'
 import React, { Component } from 'react'
 import { Button, View, Text } from 'react-native'
 import { cologneRestaurants } from '../../assets/data/cologneRestaurants'
+import { withNavigation } from 'react-navigation'
+import theme from '../../config/theme.style'
 import styles from './styles'
 
 type Props = {}
@@ -40,8 +42,18 @@ _handleFinishLoading = () => {
 }
 
 
-_handleOnPress = () => {
+_handleButtonPress = () => {
   this._getRandomEntry(cologneRestaurants)
+}
+
+_handleTextPress = () => {
+  const { pickedRestaurant } = this.state
+  const restaurantName = JSON.stringify(this.state.pickedRestaurant.name)
+
+  this.props.navigation.navigate('DetailScreen', {
+    itemTitle: restaurantName,
+    detailData: pickedRestaurant
+  })
 }
 
 _renderRestaurant = () => {
@@ -50,18 +62,12 @@ _renderRestaurant = () => {
   if (pickedRestaurant) {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>{JSON.stringify(pickedRestaurant.name)}</Text>
-        <Text style={styles.text}>{JSON.stringify(pickedRestaurant.sector)}</Text>
-        <Text style={styles.text}>{JSON.stringify(pickedRestaurant.food)}</Text>
-        <Text style={styles.text}>{JSON.stringify(pickedRestaurant.website)}</Text>
-        <Text style={styles.text}>{JSON.stringify(pickedRestaurant.phone)}</Text>
-        <Text style={styles.text}>{JSON.stringify(pickedRestaurant.address)}</Text>
-        <Text style={styles.text}>{JSON.stringify(pickedRestaurant.times)}</Text>
+        <Text style={styles.text} onPress={this._handleTextPress}>{JSON.stringify(pickedRestaurant.name)}</Text>
       </View>
     )
   }
 
-  return <Text>Use Button</Text>
+  return <Text style={styles.text}>Use Button</Text>
 }
 
 render() {
@@ -69,9 +75,9 @@ render() {
     <>
     <View style={[styles.container, { marginTop: 10 }]}>
       <Button
-        onPress={this._handleOnPress}
+        onPress={this._handleButtonPress}
         title='Get Restaurant'
-        color='#4e2026' />
+        color={theme.COLOR_BUTTON_DARK} />
     </View>
 
       <View style={styles.container}>
@@ -81,4 +87,4 @@ render() {
   )
 }
 }
-export default getRestaurant
+export default withNavigation(getRestaurant)

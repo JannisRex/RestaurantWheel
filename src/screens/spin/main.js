@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
-import { Container, GetRestaurant, Settings } from '../../components/index'
+import { DynamicScrollView, GetRestaurant, Settings } from '../../components/index'
 import Swiper from 'react-native-swiper'
 import styles from './styles'
 
@@ -8,7 +8,7 @@ import styles from './styles'
 class SpinScreen extends Component {
   render() {
     return (
-      <Container>
+      <DynamicScrollView>
         <Swiper
           showsPagination={false}
           index={0}>
@@ -19,7 +19,7 @@ class SpinScreen extends Component {
             <Settings />
           </View>
         </Swiper>
-      </Container>
+      </DynamicScrollView>
     )
   }
 }
