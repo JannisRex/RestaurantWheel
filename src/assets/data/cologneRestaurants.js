@@ -105,7 +105,7 @@ export const cologneRestaurants = [
       wednesday: ['21:00', '17:00'],
       monday: ['21:30', '17:00']
     },
-    address: 'Mathiasstraße 4-6',
+    adress: 'Mathiasstraße 4-6',
     phone: '02212717117',
     website: 'http://www.blue-lounge.com'
   },
@@ -123,7 +123,7 @@ export const cologneRestaurants = [
       wednesday: ['21:00', '17:00'],
       monday: ['21:00', '17:00']
     },
-    address: 'Luxemburger Straße 32',
+    adress: 'Luxemburger Straße 32',
     phone: '0221231248',
     website: 'http://www.blue-shell.de'
   },
@@ -141,7 +141,7 @@ export const cologneRestaurants = [
       wednesday: ['11:30', '23:00'],
       monday: ['11:30', '23:00']
     },
-    address: 'Schanzenstraße 37',
+    adress: 'Schanzenstraße 37',
     phone: '0221137644',
     website: 'abc.de'
   }
