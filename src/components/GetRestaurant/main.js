@@ -3,11 +3,13 @@ import type { pickedRestaurant } from '../../../flow/index'
 import React, { Component } from 'react'
 import { Button, View, Text } from 'react-native'
 import { cologneRestaurants } from '../../assets/data/cologneRestaurants'
-import { withNavigation } from 'react-navigation'
+import { withNavigation, NavigationScreenProp } from 'react-navigation'
 import theme from '../../config/theme.style'
 import styles from './styles'
 
-type Props = {}
+type Props = {
+  navigation: NavigationScreenProp<any>,
+}
 
 type State = {
   isLoading: boolean,
@@ -48,7 +50,7 @@ _handleButtonPress = () => {
 
 _handleTextPress = () => {
   const { pickedRestaurant } = this.state
-  const restaurantName = JSON.stringify(this.state.pickedRestaurant.name)
+  const restaurantName = pickedRestaurant ? JSON.stringify(pickedRestaurant.name) : null
 
   this.props.navigation.navigate('DetailScreen', {
     itemTitle: restaurantName,
