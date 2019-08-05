@@ -12,9 +12,9 @@ const TabConfig = {
       backgroundColor: theme.COLOR_HEADER
     },
     activeBackgroundColor: theme.COLOR_BUTTON_DARK,
-    inactiveBackgroundColor: theme.COLOR_BACKGROUND,
+    inactiveBackgroundColor: theme.COLOR_HEADER,
     activeTintColor: theme.COLOR_IVORY,
-    inactiveTintColor: theme.COLOR_HEADER
+    inactiveTintColor: theme.COLOR_BACKGROUND
   }
 }
 
