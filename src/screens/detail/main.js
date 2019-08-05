@@ -14,7 +14,11 @@ type Props = {
   pickedRestaurant: pickedRestaurant
 }
 
-class DetailScreen extends Component<Props> {
+type State = {
+  browserResult: {} | null
+}
+
+class DetailScreen extends Component<Props, State> {
   static navigationOptions = ({ navigation }: {navigation: NavigationScreenProp<any>}) => {
     return {
       title: (navigation.state.params.itemTitle).slice(1, -1),
@@ -41,8 +45,6 @@ _handleLinkPress = async () => {
   const pickedRestaurant = navigation.getParam('detailData', {})
   const url = pickedRestaurant.website
 
-  console.log(url)
-
   let browserResult = await WebBrowser.openBrowserAsync(url)
   this.setState({ browserResult })
 }
@@ -65,7 +67,7 @@ render() {
           <Text style={styles.bodyText}>food: {(JSON.stringify(pickedRestaurant.food).slice(1, -1))}</Text>
           <Text style={styles.bodyText} onPress={this._handleLinkPress}>link: http://www.website.com</Text>
           <Text style={styles.bodyText}>phone: {(JSON.stringify(pickedRestaurant.phone).slice(1, -1))}</Text>
-          <Text style={styles.bodyText}>street: {(JSON.stringify(pickedRestaurant.address).slice(1, -1))}</Text>
+          <Text style={styles.bodyText}>street: {(JSON.stringify(pickedRestaurant.adress).slice(1, -1))}</Text>
           <Text style={styles.bodyText}>open/not opened</Text>
         </View>
       </View>
