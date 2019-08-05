@@ -13,7 +13,13 @@ export const cologneRestaurants = [
     name: 'Gürzenich',
     sector: 'restaurant',
     food: 'pizza',
-    times: { tuesday: ['8:30', '17:30'], friday: ['8:30', '17:30'], thursday: ['8:30', '17:30'], wednesday: ['8:30', '17:30'], monday: ['8:30', '17:30'] },
+    times: {
+      tuesday: ['8:30', '17:30'],
+      friday: ['8:30', '17:30'],
+      thursday: ['8:30', '17:30'],
+      wednesday: ['8:30', '17:30'],
+      monday: ['8:30', '17:30']
+    },
     adress: 'Martinstraße 29-37',
     phone: '02212848911',
     website: 'http://www.koelnkongress.de'
@@ -47,10 +53,11 @@ export const cologneRestaurants = [
       wednesday: ['11:00', '12:00'],
       monday: ['11:00', '12:00']
     },
-    address: 'Habsburgerring 2-12',
+    adress: 'Habsburgerring 2-12',
     phone: '022120196151',
     website: 'https://de.vapiano.com/de/nc/restaurants/vapiano-koeln-2-habsburger-ring-2-12-1/'
   },
+
   {
     name: 'Purino Feilenhof',
     sector: 'restaurant',
@@ -64,10 +71,11 @@ export const cologneRestaurants = [
       wednesday: ['17:00', '23:00'],
       monday: ['17:00', '23:00']
     },
-    address: 'Steinstraße 58',
+    adress: 'Steinstraße 58',
     phone: '022039584884',
     website: 'http://www.purino.de/restaurants/koeln-porz.html'
   },
+
   {
     name: 'Die fette Kuh',
     sector: 'imbiss',
@@ -78,11 +86,13 @@ export const cologneRestaurants = [
       friday: ['12:00', '23:00'],
       thursday: ['12:00', '23:00'],
       wednesday: ['12:00', '23:00'],
-      monday: ['12:00', '23:00'] },
-    address: 'Bonner Straße 43',
+      monday: ['12:00', '23:00']
+    },
+    adress: 'Bonner Straße 43',
     phone: '022137627775',
     website: 'http://www.diefettekuh.de'
   },
+
   {
     name: 'Blue Lounge',
     sector: 'lieferservice',
@@ -99,6 +109,7 @@ export const cologneRestaurants = [
     phone: '02212717117',
     website: 'http://www.blue-lounge.com'
   },
+
   {
     name: 'Blue Shell',
     sector: 'bar',
@@ -116,6 +127,7 @@ export const cologneRestaurants = [
     phone: '0221231248',
     website: 'http://www.blue-shell.de'
   },
+
   {
     name: 'Peking',
     sector: 'lieferservice',
