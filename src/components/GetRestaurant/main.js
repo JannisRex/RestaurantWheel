@@ -18,7 +18,7 @@ type State = {
   pickedRestaurant: pickedRestaurant | null
 }
 
-const letter = 'aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ'
+const letter = 'aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ<>'
 
 class getRestaurant extends Component<Props, State> {
   constructor() {
@@ -71,7 +71,7 @@ _handleRestaurantPress = () => {
 
 _handleSpinTo = () => {
   try {
-    this.refs.slot.spinTo('AAAAAAAA')
+    this.refs.slot.spinTo('fastfood')
     // this.refs.slot.spinTo(JSON.stringify(this.state.pickedRestaurant.food))
   } catch (e) {
     console.log(e)
@@ -79,28 +79,9 @@ _handleSpinTo = () => {
   }
 }
 
-_renderRestaurant = () => {
+render() {
   const charCount = 8
 
-  return (
-    <View
-      style={[styles.container, { flex: 3, backgroundColor: 'tomato' }]}
-      onStartShouldSetResponder={this._handleRestaurantPress}>
-      <SlotMachine
-        ref='slot'
-        initialAnimation={false}
-        padding={charCount}
-        defaultChar={'A'}
-        text='BUTTON'
-        range={letter}
-        height={45}
-        width={35}
-      />
-    </View>
-  )
-}
-
-render() {
   return (
     <>
     <View style={[styles.container, { marginTop: 10 }]}>
@@ -109,9 +90,22 @@ render() {
         title='Get Restaurant'
         color={theme.COLOR_BUTTON_DARK} />
     </View>
-
-      <View style={styles.container}>
-        {this._renderRestaurant()}
+      <View
+        style={[styles.container, { flex: 3 }]}>
+        <View
+          onStartShouldSetResponder={this._handleSpinTo}
+        >
+          <SlotMachine
+            ref='slot'
+            initialAnimation={false}
+            padding={charCount}
+            defaultChar={' '}
+            text='<BUTTON>'
+            range={letter}
+            height={45}
+            width={35}
+          />
+        </View>
       </View>
   </>
   )
