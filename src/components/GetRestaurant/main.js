@@ -1,7 +1,7 @@
 // @flow
 import type { pickedRestaurant } from '../../../flow/index'
 import React, { Component } from 'react'
-import { Button, View, Text } from 'react-native'
+import { Button, View } from 'react-native'
 import { cologneRestaurants } from '../../assets/data/cologneRestaurants'
 import { withNavigation, NavigationScreenProp } from 'react-navigation'
 import SlotMachine from 'react-native-slot-machine'
@@ -38,44 +38,63 @@ _getRandomEntry = (data: Array<Object>) => {
     this.setState({ restaurantPicked: true })
 
     const pickedRestaurant = data[Math.floor(Math.random() * data.length)]
-    this.setState({ pickedRestaurant }, () => this._handleFinishLoading())
+    this.setState({ pickedRestaurant }, this._handleFinishLoading)
   }
 }
 
 _handleFinishLoading = () => {
-  this.refs.slot.spinTo(JSON.stringify(this.state.pickedRestaurant.sector))
+  // JSON.stringify(this.state.pickedRestaurant.sector)
+  this.refs.slot.spinTo('AAAAAAAA')
   this.setState({ isLoading: false }, this.setState({ restaurantPicked: false }))
 }
 
 
 _handleButtonPress = () => {
+  this.refs.slot.spinTo('AAAAAAAA')
   this._getRandomEntry(cologneRestaurants)
 }
 
 _handleRestaurantPress = () => {
   const { pickedRestaurant } = this.state
-  const restaurantName = pickedRestaurant ? JSON.stringify(pickedRestaurant.name) : null
 
-  this.props.navigation.navigate('DetailScreen', {
-    itemTitle: restaurantName,
-    detailData: pickedRestaurant
-  })
+  if (pickedRestaurant) {
+    if (pickedRestaurant.name) {
+      const restaurantName = JSON.stringify(pickedRestaurant.name)
+
+      this.props.navigation.navigate('DetailScreen', {
+        itemTitle: restaurantName,
+        detailData: pickedRestaurant
+      })
+    }
+  }
 }
 
-// {styles.text}>{JSON.stringify(pickedRestaurant.name)}
+_handleSpinTo = () => {
+  try {
+    this.refs.slot.spinTo('AAAAAAAA')
+    // this.refs.slot.spinTo(JSON.stringify(this.state.pickedRestaurant.food))
+  } catch (e) {
+    console.log(e)
+    this.refs.slot.spinTo('ERROR')
+  }
+}
 
 _renderRestaurant = () => {
+  const charCount = 8
+
   return (
     <View
-      style={styles.container}
-      onStartShouldSetResponder={() => this.refs.slot.spinTo('RESTAURANT NAME')}>
+      style={[styles.container, { flex: 3, backgroundColor: 'tomato' }]}
+      onStartShouldSetResponder={this._handleRestaurantPress}>
       <SlotMachine
         ref='slot'
         initialAnimation={false}
-        text='PRESS BUTTON'
+        padding={charCount}
+        defaultChar={'A'}
+        text='BUTTON'
         range={letter}
         height={45}
-        width={30}
+        width={35}
       />
     </View>
   )
