@@ -111,21 +111,21 @@ export const cologneRestaurants = [
   },
 
   {
-    name: 'Blue Shell',
-    sector: 'bar',
-    food: 'disco xD',
+    name: 'Taverne Alekos',
+    sector: 'restaurant',
+    food: 'griechisch',
     times: {
-      sunday: ['21:00', '17:00'],
-      saturday: ['21:00', '17:00'],
-      tuesday: ['21:00', '17:00'],
-      friday: ['21:00', '17:00'],
-      thursday: ['21:00', '17:00'],
-      wednesday: ['21:00', '17:00'],
-      monday: ['21:00', '17:00']
+      sunday: ['12:00', '12:00'],
+      saturday: ['12:00', '12:00'],
+      tuesday: ['12:00', '12:00'],
+      friday: ['12:00', '12:00'],
+      thursday: ['12:00', '12:00'],
+      wednesday: ['12:00', '12:00'],
+      monday: ['12:00', '12:00']
     },
-    adress: 'Luxemburger Straße 32',
-    phone: '0221231248',
-    website: 'http://www.blue-shell.de'
+    adress: 'Venloer Straße 275',
+    phone: '0221-516640',
+    website: 'http://www.tavernealekos.de'
   },
 
   {
