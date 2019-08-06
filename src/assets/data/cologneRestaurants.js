@@ -113,7 +113,7 @@ export const cologneRestaurants = [
   {
     name: 'Taverne Alekos',
     sector: 'restaurant',
-    food: 'griechisch',
+    food: 'greek',
     times: {
       sunday: ['12:00', '12:00'],
       saturday: ['12:00', '12:00'],
@@ -131,7 +131,7 @@ export const cologneRestaurants = [
   {
     name: 'Peking',
     sector: 'lieferservice',
-    food: 'asiatisch',
+    food: 'asian',
     times: {
       sunday: ['11:30', '23:00'],
       saturday: ['11:30', '23:00'],
@@ -143,6 +143,6 @@ export const cologneRestaurants = [
     },
     adress: 'Schanzenstraße 37',
     phone: '0221137644',
-    website: 'abc.de'
+    website: 'http://www.peking-am-dom.de/'
   }
 ]
