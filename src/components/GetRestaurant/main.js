@@ -79,14 +79,9 @@ _handleSpinTo = () => {
 }
 
 render() {
-  const DeviceWidth = Dimensions.get('window').width
+  const deviceWidth = Dimensions.get('window').width
   const charCount = 8
-
-  let a = false
-  if (DeviceWidth && !a) {
-    a = true
-    console.log(DeviceWidth)
-  }
+  const slotWidth = Math.floor((deviceWidth - 50) / charCount)
 
   return (
     <>
@@ -107,7 +102,7 @@ render() {
             text='<BUTTON>'
             range={letter}
             height={45}
-            width={35} />
+            width={slotWidth} />
         </View>
       </View>
   </>
