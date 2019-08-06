@@ -43,6 +43,7 @@ _getRandomEntry = (data: Array<Object>) => {
 }
 
 _handleFinishLoading = () => {
+  this.refs.slot.spinTo(JSON.stringify(this.state.pickedRestaurant.sector))
   this.setState({ isLoading: false }, this.setState({ restaurantPicked: false }))
 }
 
