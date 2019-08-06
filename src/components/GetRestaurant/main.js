@@ -48,7 +48,7 @@ _handleButtonPress = () => {
   this._getRandomEntry(cologneRestaurants)
 }
 
-_handleTextPress = () => {
+_handleRestaurantPress = () => {
   const { pickedRestaurant } = this.state
   const restaurantName = pickedRestaurant ? JSON.stringify(pickedRestaurant.name) : null
 
@@ -63,8 +63,10 @@ _renderRestaurant = () => {
 
   if (pickedRestaurant) {
     return (
-      <View style={styles.container}>
-        <Text style={styles.text} onPress={this._handleTextPress}>{JSON.stringify(pickedRestaurant.name)}</Text>
+      <View
+        style={styles.container}
+        onStartShouldSetResponder={this._handleRestaurantPress}>
+        <Text style={styles.text}>{JSON.stringify(pickedRestaurant.name)}</Text>
       </View>
     )
   }
