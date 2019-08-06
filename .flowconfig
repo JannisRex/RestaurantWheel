@@ -70,6 +70,7 @@ module.name_mapper='^react-navigation-drawer$' -> '<PROJECT_ROOT>/flow/fixTypes'
 module.name_mapper='^react-native-snap-carousel$' -> '<PROJECT_ROOT>/flow/fixTypes'
 module.name_mapper='^react-native-calendars$' -> '<PROJECT_ROOT>/flow/fixTypes'
 module.name_mapper='^react-native-swiper$' -> '<PROJECT_ROOT>/flow/fixTypes'
+module.name_mapper='^react-native-slot-machine$' -> '<PROJECT_ROOT>/flow/fixTypes'
 module.name_mapper='^@react-native-community/async-storage$' -> '<PROJECT_ROOT>/flow/fixTypes'
 
 suppress_type=$FlowIssue
