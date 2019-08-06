@@ -1,4 +1,5 @@
 // @flow
+import type { quoteData } from '../../../flow/index'
 import React, { Component } from 'react'
 import { Button, Text, View } from 'react-native'
 import { Container } from '../../components/index'
@@ -9,7 +10,7 @@ type Props = {}
 
 type State = {
   isLoading: boolean,
-  quoteData: {} | null,
+  quoteData: quoteData | null,
   selectedQuote: number | null
 }
 
@@ -42,7 +43,13 @@ _fetchQuotes = () => {
 }
 
 _handleButtonPress = () => {
-  let selectedQuote = Math.floor(Math.random() * this.state.quoteData.quotes.length)
+  const { quoteData } = this.state
+
+  if (quoteData === null) {
+    return
+  }
+
+  let selectedQuote = Math.floor(Math.random() * quoteData.quotes.length)
   this.setState({ selectedQuote })
 }
 
@@ -59,7 +66,7 @@ render() {
 
       <View style={styles.container}>
 
-        {selectedQuote ? <>
+        {selectedQuote && quoteData ? <>
           <Text style={styles.quoteBody}>{JSON.stringify(quoteData.quotes[selectedQuote].quote)}</Text>
           <Text style={styles.quoteAuthor}>{'-' + (JSON.stringify(quoteData.quotes[selectedQuote].author)).slice(1, -1)}</Text>
           </> : null}
