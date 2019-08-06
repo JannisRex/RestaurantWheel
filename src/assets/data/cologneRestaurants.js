@@ -113,7 +113,7 @@ export const cologneRestaurants = [
   {
     name: 'Blue Shell',
     sector: 'bar',
-    food: 'international',
+    food: 'disco xD',
     times: {
       sunday: ['21:00', '17:00'],
       saturday: ['21:00', '17:00'],
@@ -131,7 +131,7 @@ export const cologneRestaurants = [
   {
     name: 'Peking',
     sector: 'lieferservice',
-    food: 'international',
+    food: 'asiatisch',
     times: {
       sunday: ['11:30', '23:00'],
       saturday: ['11:30', '23:00'],
