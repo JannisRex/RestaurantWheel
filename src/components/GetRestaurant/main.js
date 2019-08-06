@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { Button, View, Text } from 'react-native'
 import { cologneRestaurants } from '../../assets/data/cologneRestaurants'
 import { withNavigation, NavigationScreenProp } from 'react-navigation'
+import SlotMachine from 'react-native-slot-machine'
 import theme from '../../config/theme.style'
 import styles from './styles'
 
@@ -16,6 +17,8 @@ type State = {
   restaurantPicked: boolean,
   pickedRestaurant: pickedRestaurant | null
 }
+
+const letter = 'aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ'
 
 class getRestaurant extends Component<Props, State> {
   constructor() {
@@ -58,20 +61,23 @@ _handleRestaurantPress = () => {
   })
 }
 
+// {styles.text}>{JSON.stringify(pickedRestaurant.name)}
+
 _renderRestaurant = () => {
-  const { pickedRestaurant } = this.state
-
-  if (pickedRestaurant) {
-    return (
-      <View
-        style={styles.container}
-        onStartShouldSetResponder={this._handleRestaurantPress}>
-        <Text style={styles.text}>{JSON.stringify(pickedRestaurant.name)}</Text>
-      </View>
-    )
-  }
-
-  return <Text style={styles.text}>Use Button</Text>
+  return (
+    <View
+      style={styles.container}
+      onStartShouldSetResponder={() => this.refs.slot.spinTo('RESTAURANT NAME')}>
+      <SlotMachine
+        ref='slot'
+        initialAnimation={false}
+        text='PRESS BUTTON'
+        range={letter}
+        height={45}
+        width={30}
+      />
+    </View>
+  )
 }
 
 render() {
