@@ -26,12 +26,9 @@ const BottomTabNavigator = createBottomTabNavigator({
       header: null,
       tabBarIcon: ({ focused }) => (
         <TabBarIcon
-          class='Ionicons'
+          class='MaterialIcons'
           focused={focused}
-          name={
-            Platform.OS === 'ios'
-              ? `ios-information-circle${focused ? '' : '-outline'}`
-              : 'md-information-circle'} />
+          name={'casino'} />
       )
     }
   },
@@ -42,9 +39,9 @@ const BottomTabNavigator = createBottomTabNavigator({
       header: null,
       tabBarIcon: ({ focused }) => (
         <TabBarIcon
-          class='Entypo'
+          class='MaterialCommunityIcons'
           focused={focused}
-          name='aircraft' />
+          name='brain' />
       )
     }
   }
