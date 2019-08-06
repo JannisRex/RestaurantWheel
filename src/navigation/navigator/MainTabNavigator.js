@@ -20,7 +20,7 @@ const TabConfig = {
 
 const BottomTabNavigator = createBottomTabNavigator({
 
-  ScreenA: {
+  'Spin!': {
     screen: SpinSwitchNavigatior,
     navigationOptions: {
       header: null,
@@ -36,7 +36,7 @@ const BottomTabNavigator = createBottomTabNavigator({
     }
   },
 
-  ScreenB: {
+  'Inspire': {
     screen: CustomSpinScreen,
     navigationOptions: {
       header: null,
