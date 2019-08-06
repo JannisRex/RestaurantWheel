@@ -1,7 +1,7 @@
 // @flow
 import type { pickedRestaurant } from '../../../flow/index'
 import React, { Component } from 'react'
-import { Button, View } from 'react-native'
+import { Button, Dimensions, View } from 'react-native'
 import { cologneRestaurants } from '../../assets/data/cologneRestaurants'
 import { withNavigation, NavigationScreenProp } from 'react-navigation'
 import SlotMachine from 'react-native-slot-machine'
@@ -42,15 +42,14 @@ _getRandomEntry = (data: Array<Object>) => {
   }
 }
 
-_handleFinishLoading = () => {
+_handleFinishLoading = async () => {
   // JSON.stringify(this.state.pickedRestaurant.sector)
-  this.refs.slot.spinTo('AAAAAAAA')
-  this.setState({ isLoading: false }, this.setState({ restaurantPicked: false }))
+  await this.setState({ isLoading: false }, this.setState({ restaurantPicked: false }))
+  await this._handleSpinTo()
 }
 
 
 _handleButtonPress = () => {
-  this.refs.slot.spinTo('AAAAAAAA')
   this._getRandomEntry(cologneRestaurants)
 }
 
@@ -80,7 +79,14 @@ _handleSpinTo = () => {
 }
 
 render() {
+  const DeviceWidth = Dimensions.get('window').width
   const charCount = 8
+
+  let a = false
+  if (DeviceWidth && !a) {
+    a = true
+    console.log(DeviceWidth)
+  }
 
   return (
     <>
@@ -92,9 +98,7 @@ render() {
     </View>
       <View
         style={[styles.container, { flex: 3 }]}>
-        <View
-          onStartShouldSetResponder={this._handleSpinTo}
-        >
+        <View onStartShouldSetResponder={this._handleRestaurantPress}>
           <SlotMachine
             ref='slot'
             initialAnimation={false}
@@ -103,8 +107,7 @@ render() {
             text='<BUTTON>'
             range={letter}
             height={45}
-            width={35}
-          />
+            width={35} />
         </View>
       </View>
   </>
