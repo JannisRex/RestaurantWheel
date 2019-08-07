@@ -27,7 +27,7 @@ export const cologneRestaurants = [
   {
     name: 'Borsalino',
     sector: 'imbiss',
-    food: 'pizza',
+    food: 'Pizza',
     times: {
       sunday: ['8:00', '23:59'],
       saturday: ['8:00', '23:59'],
@@ -44,7 +44,7 @@ export const cologneRestaurants = [
   {
     name: 'Vapiano',
     sector: 'restaurant',
-    food: 'italian',
+    food: 'Italian',
     times: { sunday: ['11:00', '12:00'],
       saturday: ['11:00', '12:00'],
       tuesday: ['11:00', '12:00'],
@@ -61,7 +61,7 @@ export const cologneRestaurants = [
   {
     name: 'Purino Feilenhof',
     sector: 'restaurant',
-    food: 'italian',
+    food: 'Italian',
     times: {
       sunday: ['11:30', '23:00'],
       saturday: ['11:30', '23:00'],
@@ -79,7 +79,7 @@ export const cologneRestaurants = [
   {
     name: 'Die fette Kuh',
     sector: 'imbiss',
-    food: 'fastfood',
+    food: 'Fastfood',
     times: { sunday: ['12:00', '23:00'],
       saturday: ['12:00', '23:00'],
       tuesday: ['12:00', '23:00'],
@@ -96,7 +96,7 @@ export const cologneRestaurants = [
   {
     name: 'Blue Lounge',
     sector: 'lieferservice',
-    food: 'fastfood',
+    food: 'Fastfood',
     times: {
       saturday: ['21:00', '17:00'],
       tuesday: ['21:00', '17:00'],
@@ -113,7 +113,7 @@ export const cologneRestaurants = [
   {
     name: 'Taverne Alekos',
     sector: 'restaurant',
-    food: 'greek',
+    food: 'Greek',
     times: {
       sunday: ['12:00', '12:00'],
       saturday: ['12:00', '12:00'],
@@ -131,7 +131,7 @@ export const cologneRestaurants = [
   {
     name: 'Peking',
     sector: 'lieferservice',
-    food: 'asian',
+    food: 'Asian',
     times: {
       sunday: ['11:30', '23:00'],
       saturday: ['11:30', '23:00'],
