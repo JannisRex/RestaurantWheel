@@ -18,7 +18,7 @@ type State = {
   pickedRestaurant: pickedRestaurant | null
 }
 
-const letter = 'aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ<>'
+const letter = ' aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ<>'
 
 class getRestaurant extends Component<Props, State> {
   constructor() {
@@ -43,7 +43,6 @@ _getRandomEntry = (data: Array<Object>) => {
 }
 
 _handleFinishLoading = async () => {
-  // JSON.stringify(this.state.pickedRestaurant.sector)
   await this.setState({ isLoading: false }, this.setState({ restaurantPicked: false }))
   await this._handleSpinTo()
 }
@@ -70,8 +69,9 @@ _handleRestaurantPress = () => {
 
 _handleSpinTo = () => {
   try {
-    this.refs.slot.spinTo('fastfood')
-    // this.refs.slot.spinTo(JSON.stringify(this.state.pickedRestaurant.food))
+    // this.refs.slot.spinTo('fastfood')
+    const slotName = JSON.stringify(this.state.pickedRestaurant.food)
+    this.refs.slot.spinTo(slotName)
   } catch (e) {
     console.log(e)
     this.refs.slot.spinTo('ERROR')
