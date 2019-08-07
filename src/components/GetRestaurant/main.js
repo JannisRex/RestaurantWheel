@@ -1,9 +1,10 @@
 // @flow
 import type { pickedRestaurant } from '../../../flow/index'
 import React, { Component } from 'react'
-import { Button, View, Text } from 'react-native'
+import { Button, Dimensions, View } from 'react-native'
 import { cologneRestaurants } from '../../assets/data/cologneRestaurants'
 import { withNavigation, NavigationScreenProp } from 'react-navigation'
+import SlotMachine from 'react-native-slot-machine'
 import theme from '../../config/theme.style'
 import styles from './styles'
 
@@ -16,6 +17,8 @@ type State = {
   restaurantPicked: boolean,
   pickedRestaurant: pickedRestaurant | null
 }
+
+const letter = ' aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ<>'
 
 class getRestaurant extends Component<Props, State> {
   constructor() {
@@ -35,12 +38,13 @@ _getRandomEntry = (data: Array<Object>) => {
     this.setState({ restaurantPicked: true })
 
     const pickedRestaurant = data[Math.floor(Math.random() * data.length)]
-    this.setState({ pickedRestaurant }, () => this._handleFinishLoading())
+    this.setState({ pickedRestaurant }, this._handleFinishLoading)
   }
 }
 
-_handleFinishLoading = () => {
-  this.setState({ isLoading: false }, this.setState({ restaurantPicked: false }))
+_handleFinishLoading = async () => {
+  await this.setState({ isLoading: false }, this.setState({ restaurantPicked: false }))
+  await this._handleSpinTo()
 }
 
 
@@ -48,31 +52,37 @@ _handleButtonPress = () => {
   this._getRandomEntry(cologneRestaurants)
 }
 
-_handleTextPress = () => {
-  const { pickedRestaurant } = this.state
-  const restaurantName = pickedRestaurant ? JSON.stringify(pickedRestaurant.name) : null
-
-  this.props.navigation.navigate('DetailScreen', {
-    itemTitle: restaurantName,
-    detailData: pickedRestaurant
-  })
-}
-
-_renderRestaurant = () => {
+_handleRestaurantPress = () => {
   const { pickedRestaurant } = this.state
 
   if (pickedRestaurant) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text} onPress={this._handleTextPress}>{JSON.stringify(pickedRestaurant.name)}</Text>
-      </View>
-    )
-  }
+    if (pickedRestaurant.name) {
+      const restaurantName = JSON.stringify(pickedRestaurant.name)
 
-  return <Text style={styles.text}>Use Button</Text>
+      this.props.navigation.navigate('DetailScreen', {
+        itemTitle: restaurantName,
+        detailData: pickedRestaurant
+      })
+    }
+  }
+}
+
+_handleSpinTo = () => {
+  try {
+    // this.refs.slot.spinTo('fastfood')
+    const slotName = JSON.stringify(this.state.pickedRestaurant.food)
+    this.refs.slot.spinTo(slotName)
+  } catch (e) {
+    console.log(e)
+    this.refs.slot.spinTo('ERROR')
+  }
 }
 
 render() {
+  const deviceWidth = Dimensions.get('window').width
+  const charCount = 8
+  const slotWidth = Math.floor((deviceWidth - 50) / charCount)
+
   return (
     <>
     <View style={[styles.container, { marginTop: 10 }]}>
@@ -81,9 +91,19 @@ render() {
         title='Get Restaurant'
         color={theme.COLOR_BUTTON_DARK} />
     </View>
-
-      <View style={styles.container}>
-        {this._renderRestaurant()}
+      <View
+        style={[styles.container, { flex: 3 }]}>
+        <View onStartShouldSetResponder={this._handleRestaurantPress}>
+          <SlotMachine
+            ref='slot'
+            initialAnimation={false}
+            padding={charCount}
+            defaultChar={' '}
+            text='<BUTTON>'
+            range={letter}
+            height={45}
+            width={slotWidth} />
+        </View>
       </View>
   </>
   )

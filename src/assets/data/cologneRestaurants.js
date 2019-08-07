@@ -27,7 +27,7 @@ export const cologneRestaurants = [
   {
     name: 'Borsalino',
     sector: 'imbiss',
-    food: 'pizza',
+    food: 'Pizza',
     times: {
       sunday: ['8:00', '23:59'],
       saturday: ['8:00', '23:59'],
@@ -44,7 +44,7 @@ export const cologneRestaurants = [
   {
     name: 'Vapiano',
     sector: 'restaurant',
-    food: 'italian',
+    food: 'Italian',
     times: { sunday: ['11:00', '12:00'],
       saturday: ['11:00', '12:00'],
       tuesday: ['11:00', '12:00'],
@@ -61,7 +61,7 @@ export const cologneRestaurants = [
   {
     name: 'Purino Feilenhof',
     sector: 'restaurant',
-    food: 'italian',
+    food: 'Italian',
     times: {
       sunday: ['11:30', '23:00'],
       saturday: ['11:30', '23:00'],
@@ -79,7 +79,7 @@ export const cologneRestaurants = [
   {
     name: 'Die fette Kuh',
     sector: 'imbiss',
-    food: 'fastfood',
+    food: 'Fastfood',
     times: { sunday: ['12:00', '23:00'],
       saturday: ['12:00', '23:00'],
       tuesday: ['12:00', '23:00'],
@@ -96,7 +96,7 @@ export const cologneRestaurants = [
   {
     name: 'Blue Lounge',
     sector: 'lieferservice',
-    food: 'fastfood',
+    food: 'Fastfood',
     times: {
       saturday: ['21:00', '17:00'],
       tuesday: ['21:00', '17:00'],
@@ -111,27 +111,27 @@ export const cologneRestaurants = [
   },
 
   {
-    name: 'Blue Shell',
-    sector: 'bar',
-    food: 'international',
+    name: 'Taverne Alekos',
+    sector: 'restaurant',
+    food: 'Greek',
     times: {
-      sunday: ['21:00', '17:00'],
-      saturday: ['21:00', '17:00'],
-      tuesday: ['21:00', '17:00'],
-      friday: ['21:00', '17:00'],
-      thursday: ['21:00', '17:00'],
-      wednesday: ['21:00', '17:00'],
-      monday: ['21:00', '17:00']
+      sunday: ['12:00', '12:00'],
+      saturday: ['12:00', '12:00'],
+      tuesday: ['12:00', '12:00'],
+      friday: ['12:00', '12:00'],
+      thursday: ['12:00', '12:00'],
+      wednesday: ['12:00', '12:00'],
+      monday: ['12:00', '12:00']
     },
-    adress: 'Luxemburger Straße 32',
-    phone: '0221231248',
-    website: 'http://www.blue-shell.de'
+    adress: 'Venloer Straße 275',
+    phone: '0221-516640',
+    website: 'http://www.tavernealekos.de'
   },
 
   {
     name: 'Peking',
     sector: 'lieferservice',
-    food: 'international',
+    food: 'Asian',
     times: {
       sunday: ['11:30', '23:00'],
       saturday: ['11:30', '23:00'],
@@ -143,6 +143,6 @@ export const cologneRestaurants = [
     },
     adress: 'Schanzenstraße 37',
     phone: '0221137644',
-    website: 'abc.de'
+    website: 'http://www.peking-am-dom.de/'
   }
 ]

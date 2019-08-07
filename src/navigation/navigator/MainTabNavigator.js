@@ -1,5 +1,4 @@
 import React from 'react'
-import { Platform } from 'react-native'
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation'
 import TabBarIcon from '../../lib/TabBarIcon'
 import SpinSwitchNavigatior from './SpinSwitchNavigatior'
@@ -20,31 +19,28 @@ const TabConfig = {
 
 const BottomTabNavigator = createBottomTabNavigator({
 
-  ScreenA: {
+  'Spin!': {
     screen: SpinSwitchNavigatior,
     navigationOptions: {
       header: null,
       tabBarIcon: ({ focused }) => (
         <TabBarIcon
-          class='Ionicons'
+          class='MaterialIcons'
           focused={focused}
-          name={
-            Platform.OS === 'ios'
-              ? `ios-information-circle${focused ? '' : '-outline'}`
-              : 'md-information-circle'} />
+          name={'casino'} />
       )
     }
   },
 
-  ScreenB: {
+  'Inspire': {
     screen: CustomSpinScreen,
     navigationOptions: {
       header: null,
       tabBarIcon: ({ focused }) => (
         <TabBarIcon
-          class='Entypo'
+          class='MaterialCommunityIcons'
           focused={focused}
-          name='aircraft' />
+          name='brain' />
       )
     }
   }

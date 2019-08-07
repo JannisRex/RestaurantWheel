@@ -5,3 +5,6 @@
 // for /GetRestaurant
 export { pickedRestaurant } from './types/pickedRestaurant'
 
+// for /2ndScreen
+export { quoteData } from './types/quoteData'
+
