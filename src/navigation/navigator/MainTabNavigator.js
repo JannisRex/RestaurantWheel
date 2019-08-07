@@ -1,5 +1,4 @@
 import React from 'react'
-import { Platform } from 'react-native'
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation'
 import TabBarIcon from '../../lib/TabBarIcon'
 import SpinSwitchNavigatior from './SpinSwitchNavigatior'
