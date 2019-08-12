@@ -8,6 +8,10 @@ import { DynamicScrollView } from '../../components/index'
 import styles from './styles'
 import theme from '../../config/theme.style'
 
+// colors for different states of isOpened
+const colorGreen = '#7CFC00'
+const colorRed = '#8b0000'
+
 type Props = {
   navigation: NavigationScreenProp<any>,
   getParam: Function,
@@ -36,7 +40,8 @@ class DetailScreen extends Component<Props, State> {
     super()
 
     this.state = {
-      browserResult: null
+      browserResult: null,
+      isOpened: false
     }
   }
 
@@ -47,6 +52,15 @@ _handleLinkPress = async () => {
 
   let browserResult = await WebBrowser.openBrowserAsync(url)
   this.setState({ browserResult })
+}
+
+_checkIfOpened = (time: string): boolean => {
+  // convert time:string to time:date (probaly just MM-HH-DD-MM-YYYY)
+  console.log('checking if opened @currentTime: ' + time)
+
+  if (true) {}
+
+  return true
 }
 
 render() {
@@ -68,7 +82,9 @@ render() {
           <Text style={styles.bodyText} onPress={this._handleLinkPress}>link: http://www.website.com</Text>
           <Text style={styles.bodyText}>phone: {(JSON.stringify(pickedRestaurant.phone).slice(1, -1))}</Text>
           <Text style={styles.bodyText}>street: {(JSON.stringify(pickedRestaurant.adress).slice(1, -1))}</Text>
-          <Text style={styles.bodyText}>open/not opened</Text>
+          { this.state.isOpened ?
+            <Text style={[styles.bodyText, { color: colorGreen }]}>open</Text> :
+            <Text style={[styles.bodyText, { color: colorRed }]}>not opened</Text> }
         </View>
       </View>
     </DynamicScrollView>
