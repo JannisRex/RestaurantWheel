@@ -100,6 +100,7 @@ render() {
         <View style={styles.bodyContainer}>
           <Text style={styles.bodyText}>type: {(JSON.stringify(pickedRestaurant.sector).slice(1, -1))}</Text>
           <Text style={styles.bodyText}>food: {(JSON.stringify(pickedRestaurant.food).slice(1, -1))}</Text>
+          {() => this._renderFoodIcon()}
           <Text style={styles.bodyText} onPress={this._handleLinkPress}>link: http://www.website.com</Text>
           <Text style={styles.bodyText}>phone: {(JSON.stringify(pickedRestaurant.phone).slice(1, -1))}</Text>
           <Text style={styles.bodyText}>street: {(JSON.stringify(pickedRestaurant.adress).slice(1, -1))}</Text>
