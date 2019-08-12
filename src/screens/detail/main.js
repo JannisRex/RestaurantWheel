@@ -1,12 +1,15 @@
 // @flow
 import type { pickedRestaurant } from '../../../flow/index'
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { Platform, Text, View } from 'react-native'
 import * as WebBrowser from 'expo-web-browser'
 import { NavigationScreenProp } from 'react-navigation'
 import { DynamicScrollView } from '../../components/index'
+import TabBarIcon from '../../lib/TabBarIcon'
 import styles from './styles'
 import theme from '../../config/theme.style'
+
+const isIOS = Platform.OS === 'ios'
 
 // colors for different states of isOpened
 const colorGreen = '#7CFC00'
@@ -58,9 +61,27 @@ _checkIfOpened = (time: string): boolean => {
   // convert time:string to time:date (probaly just MM-HH-DD-MM-YYYY)
   console.log('checking if opened @currentTime: ' + time)
 
-  if (true) {}
+  if (true) {
+    this.setState({
+      isOpened: true
+    })
+  }
+}
 
-  return true
+_renderFoodIcon = () => {
+  // some logic for
+  // picking correct Icon
+
+  return (
+    <TabBarIcon
+      class='Ionicons'
+      name={isIOS ? 'ios-pizza' : 'md-pizza'}
+    />
+  )
+}
+
+componentDidMount() {
+  this._checkIfOpened()
 }
 
 render() {
@@ -80,7 +101,7 @@ render() {
           <Text style={styles.bodyText}>type: {(JSON.stringify(pickedRestaurant.sector).slice(1, -1))}</Text>
           <Text style={styles.bodyText}>food: {(JSON.stringify(pickedRestaurant.food).slice(1, -1))}</Text>
           <Text style={styles.bodyText} onPress={this._handleLinkPress}>link: http://www.website.com</Text>
-          <Text style={styles.bodyText}>  phone: {(JSON.stringify(pickedRestaurant.phone).slice(1, -1))}</Text>
+          <Text style={styles.bodyText}>phone: {(JSON.stringify(pickedRestaurant.phone).slice(1, -1))}</Text>
           <Text style={styles.bodyText}>street: {(JSON.stringify(pickedRestaurant.adress).slice(1, -1))}</Text>
           { this.state.isOpened ?
             <Text style={[styles.bodyText, { color: colorGreen }]}>open</Text> :
