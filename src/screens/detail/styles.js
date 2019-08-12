@@ -15,6 +15,23 @@ const styles = StyleSheet.create({
     fontWeight: theme.FONT_WEIGHT_MEDIUM,
     color: theme.COLOR_IVORY
   },
+  typeContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center'
+  },
+  typeIcon: {
+    height: 50,
+    width: 50
+  },
+  typeText: {
+    textAlign: 'center',
+    fontSize: theme.FONT_SIZE_MEDIUM,
+    fontFamily: theme.FONT_FAMILY_TEXT,
+    fontWeight: theme.FONT_WEIGHT_LIGHT,
+    color: theme.COLOR_WHITE
+  },
   bodyContainer: {
     flex: 1,
     justifyContent: 'center',
