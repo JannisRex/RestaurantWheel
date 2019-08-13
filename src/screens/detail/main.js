@@ -22,7 +22,8 @@ type Props = {
 }
 
 type State = {
-  browserResult: {} | null
+  browserResult: {} | null,
+  isOpened: boolean
 }
 
 class DetailScreen extends Component<Props, State> {
@@ -57,7 +58,7 @@ _handleLinkPress = async () => {
   this.setState({ browserResult })
 }
 
-_checkIfOpened = (time: string): boolean => {
+_checkIfOpened = (time: string): void => {
   // convert time:string to time:date (probaly just MM-HH-DD-MM-YYYY)
   console.log('checking if opened @currentTime: ' + time)
 
