@@ -62,7 +62,9 @@ _checkIfOpened = (time: string): void => {
   // convert time:string to time:date (probaly just MM-HH-DD-MM-YYYY)
   console.log('checking if opened @currentTime: ' + time)
 
-  if (true) {
+  const someBool = true
+
+  if (someBool) {
     this.setState({
       isOpened: true
     })
