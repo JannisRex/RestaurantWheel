@@ -24,7 +24,8 @@ export default class App extends Component<Props, State> {
      Font.loadAsync({
        impact: require('./src/assets/font/impact.ttf'),
        lato_lightitalic: require('./src/assets/font/Lato-LightItalic.ttf'),
-       lato_hairline: require('./src/assets/font/Lato-Hairline.ttf')
+       lato_hairline: require('./src/assets/font/Lato-Hairline.ttf'),
+       Menlo: require('./src/assets/font/Menlo-Regular.ttf')
      })
    ])
  }
