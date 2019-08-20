@@ -1,12 +1,11 @@
 import React from 'react'
 import { Text as RNText, View, Dimensions, Animated } from 'react-native'
-import { GestureHandler, Svg } from 'expo'
+import Svg, { Path, G, Text, TSpan } from 'react-native-svg'
+import { PanGestureHandler, State } from 'react-native-gesture-handler'
 import * as d3Shape from 'd3-shape'
 import color from 'randomcolor'
 import { snap } from '@popmotion/popcorn'
 import styles from './styles'
-const { PanGestureHandler, State } = GestureHandler
-const { Path, G, Text, TSpan } = Svg
 const { width } = Dimensions.get('screen')
 
 const numberOfSegments = 12
